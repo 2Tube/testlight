@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Docs</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./Style/pfp.css">
+    <link rel="icon" type="image/png" href="./images/favicon.png">
+
+    <!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+<!-- Firebase Config -->
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyAZgBE5NSV_ueySIMEzI5sSMiXWXgIEAm0",
+    authDomain: "schoolwebapp-f387b.firebaseapp.com",
+    databaseURL: "https://schoolwebapp-f387b-default-rtdb.firebaseio.com",
+    projectId: "schoolwebapp-f387b",
+    storageBucket: "schoolwebapp-f387b.firebasestorage.app",
+    messagingSenderId: "586089938810",
+    appId: "1:586089938810:web:571725c421c9d9365220c3",
+    measurementId: "G-N116PDW0M4"
+  };
+    firebase.initializeApp(firebaseConfig);
+</script>
+
+</head>
+<body>
+
+  <div class="nav">
+    <img src="./images/elseLogo.png" style="height: 9vh; margin-left: -0.8vw;" onclick="location.href='./dash.html'" class="imgeffect">
+    <div class="rightbuttons">
+      <button onclick="location.href='./extra.html'"><img src="./images/support.webp"></button>
+      <button onclick="location.href='./profile.html'"><img src="./images/me.png"></button>
+    </div>
+  </div>
+
+  <div class="main">
+    <div id="img">
+        <img src="./images/default-pfp.png">
+        <!-- Overlay auto added by pfp.js -->
+    </div>
+
+    <div id="changer">
+        <div class="box">
+          <h2>Display Name:</h2>
+          <div id="displayNameBox"></div>
+          <button id="changeDisplayBtn">Change</button>
+        </div>
+        <div class="ringContainer">
+          <div class="ringOpt"><div class="ovLay"><p>Premium Only</p></div><img src="./profileRings/0.png">None<button class="chooseButton">Equip</button></div>
+          <div class="ringOpt"><div class="ovLay"><p>Premium Only</p></div><img src="./profileRings/1.png"><button class="chooseButton" id="insta">Equip</button></div>
+          <div class="ringOpt"><div class="ovLay"><p>Premium Only</p></div><img src="./profileRings/2.png"><button class="chooseButton" id="pedo">Equip</button></div>
+          <div class="ringOpt"><div class="ovLay"><p>Premium Only</p></div><img src="./profileRings/3.png"><button class="chooseButton" id="BK">Equip</button></div>
+          <div class="ringOpt"><div class="ovLay"><p>Premium Only</p></div><img src="./profileRings/4.png"><button class="chooseButton" id="KLM">Equip</button></div>
+          <div class="ringOpt"><div class="ovLay"><p>Premium Only</p></div><img src="./profileRings/5.png"><button class="chooseButton" id="MJ">Equip</button></div>
+          <div class="ringOpt"><div class="ovLay"><p>Premium Only</p></div><img src="./profileRings/6.png"><button class="chooseButton" id="obm">Equip</button></div>
+          <div class="ringOpt"><div class="ovLay"><p>Premium Only</p></div><img src="./profileRings/7.png"><button class="chooseButton" id="a911">Equip</button></div>
+          <div class="ringOpt"><div class="ovLay"><p>Premium Only</p></div><img src="./profileRings/8.png"><button class="chooseButton" id="elmo">Equip</button></div>
+          <div class="ringOpt"><div class="ovLay"><p>Premium Only</p></div><img src="./profileRings/9.png"><button class="chooseButton">Equip</button></div>
+        </div>
+    </div>
+  </div>
+<script src="./script/prof.js"></script>
+</body>
+</html>

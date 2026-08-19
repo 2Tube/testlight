@@ -1,0 +1,299 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+@media screen and (max-width: 890px) {
+  /* CSS rules for screens with a maximum width of 890px */
+  * {
+    display: none;
+  }
+}
+body {
+  display: flex;
+  height: 100vh;
+  background-color: #1b1b1b;
+  color: #fff;
+  overflow: hidden;
+  flex-direction: row;
+}
+
+.nav {
+  position: fixed;       /* Stay on top of everything */
+  top: 0;
+  left: 0;
+  width: 100%;           /* Full width */
+  height: 10vh;          /* Adjust as needed */
+  background-color: #252525;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 9999;         /* On top of everything else */
+    /* subtle right-side shadow to separate from main content */
+  box-shadow: 60px 0 18px -8px rgba(0,0,0,0.7);
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+}
+button > img {
+  width: 7vh;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.rightbuttons {
+  width: fit-content;
+    display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.rightbuttons > button {
+  background-color: rgba(0, 0, 0, 0);
+  margin-left: 1vw;
+  font-size: 15px;
+  border: 0px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  width: fit-content;
+  height: 7vh;
+}
+
+.rightbuttons > button:hover {
+  scale: 0.9;
+}
+
+.main {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#img {
+    width: 60vh;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    
+}
+#img > img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+#changer {
+    width: 50vw;
+    height: 60vh;
+    background-color: #252525;
+    border-radius: 15px;
+    margin-left: 5vw;
+    display: flex;
+    flex-direction: column;
+    padding: 1vw;
+    justify-content: space-around;
+}
+.box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #3a3a3a;
+    padding: 6px;
+    border-radius: 8px;
+}
+.box > h2 {
+  font-weight: 100;
+}
+.box > button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: #E0E0E0;
+    color: black;
+    transition: 200ms;
+}
+.box > button:hover {
+    filter: brightness(50%);
+    cursor: pointer;
+}
+.imgeffect:hover {
+    scale: 0.90;
+}
+.imgeffect {
+    transition: 200ms;
+    cursor: pointer;
+}
+.ringContainer {
+  width: 100%;
+  height: 100%;
+  margin-top: 10px;
+  padding: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  overflow-y: scroll;
+}
+.ringOpt {
+  background-color: #3a3a3a;
+  height: 100%;
+  max-width: 30%;
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.ringOpt > img {
+  width: 90%;
+}
+.chooseButton {
+  width: 100%;
+  padding: 10px 0px;
+  border: none;
+  border-radius: 10px;
+  color: black;
+  background: linear-gradient(to right, #ffffff, #a3a3a3);
+}
+.chooseButton:hover {
+  cursor: pointer;
+}
+.ovLay {
+  position: absolute; 
+  top: 0px; 
+  left: 0px; 
+  width: 100%; 
+  height: 100%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background: rgb(0, 0, 0, 0.65); 
+  border-radius: 15px;
+  color: white; 
+  font-size: 18px; 
+  opacity: 1; 
+  transition: 0.2s; 
+  cursor: pointer;
+}
+
+/* profile modal + hover styles */
+#displayNameBox {
+  padding: 8px 10px;
+  background: #313131;
+  border-radius: 6px;
+  color: #fff;
+  display: inline-block;
+  min-width: 55%;
+}
+
+/* Change button */
+
+
+/* Modal */
+.kord-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.kord-modal {
+  width: 360px;
+  background: #252525;
+  padding: 18px;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.kord-modal h3 { margin-bottom: 10px; }
+.kord-modal input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  background: #333;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.kord-modal .kord-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+.kord-modal .save-btn {
+  background: #4caf50;
+  color: white;
+  margin-right: 8px;
+  transition: 200ms;
+}
+.kord-modal .save-btn:hover {
+  background: #218624;
+}
+.kord-modal .cancel-btn {
+  background: #bdbdbd;
+  color: black;
+}
+
+/* small message */
+.kord-msg {
+  font-size: 13px;
+  margin-top: 6px;
+  color: #f0f0f0;
+}
+
+/* pfp hover overlay (optional) */
+#img { position: relative; display:inline-block; cursor: pointer; }
+
+#img:hover .pfp-overlay { opacity: 1; }
+
+#insta {
+  color: white;
+  background: linear-gradient(to right, red, blue);
+}
+#pedo {
+  color: white;
+  background: rgb(189, 0, 0);
+}
+#BK {
+    color: white;
+  background: linear-gradient(to right, #b88917, #c59c3d);
+}
+#KLM {
+   color: white;
+  background: linear-gradient(to right, #382000, #6d4c00);
+}
+#MJ {
+  color: rgb(97, 97, 97);
+   background: linear-gradient(to right, #C0C0C0, #e2e2e2);
+}
+#obm {
+  color: white;
+  background: linear-gradient(to right, #a55d00, #e29e00);
+}
+#a911 {
+  color: white;
+  background: linear-gradient(to right, #e27900, #ffc400);
+}
+#elmo {
+  color: white;
+  background: linear-gradient(to right, #9c0000, #6d4c00);
+  
+}

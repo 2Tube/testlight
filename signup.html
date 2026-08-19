@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Docs</title>
+  <link rel="stylesheet" href="./Style/login.css">
+  <link rel="icon" type="image/png" href="./images/favicon.png">
+</head>
+<body>
+  <div class="login-container">
+    <div id="right">
+        <img src="./images/loginWallpaper.jpg">
+      <div class="signBox">
+        <h1>Sign Up</h1>
+      <form id="signup" class="signOptions">
+        <input type="text" id="displayName" class="input" placeholder="Display Name" required />
+        <input type="text" id="username" class="input" placeholder="Username" required />
+        <input type="text" id="password" class="input" placeholder="Password" required />
+        <p>Screenshot In case if you forget your password!</p>
+        <button type="submit" class="btn2">Sign Up</button>
+
+        <p id="error" style="color:red;display:none;">Username already exists</p>
+        <p id="success" style="color:green;display:none;">Account created! Redirecting...</p>
+      </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Firebase SDKs (v8) -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+  <!-- Firebase config -->
+  <script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyAZgBE5NSV_ueySIMEzI5sSMiXWXgIEAm0",
+    authDomain: "schoolwebapp-f387b.firebaseapp.com",
+    databaseURL: "https://schoolwebapp-f387b-default-rtdb.firebaseio.com",
+    projectId: "schoolwebapp-f387b",
+    storageBucket: "schoolwebapp-f387b.firebasestorage.app",
+    messagingSenderId: "586089938810",
+    appId: "1:586089938810:web:571725c421c9d9365220c3",
+    measurementId: "G-N116PDW0M4"
+  };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <script src="./script/signup.js" defer></script>
+</body>
+</html>

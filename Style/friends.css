@@ -1,0 +1,120 @@
+/* Friend items in sidebar */
+.friend-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  background-color: rgba(255, 255, 255, 0.2); /* updated background */
+  color: white;
+  width: 16.5vw; /* take 95% of the friends tab width */
+  margin-left: auto;
+  margin-right: auto;
+  margin-left: 0.4vw;
+}
+@media screen and (max-width: 890px) {
+  /* CSS rules for screens with a maximum width of 890px */
+  * {
+    display: none;
+  }
+}
+
+.friend-buttons button {
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 3px;
+  transition: 0.2s;
+  padding: 0;
+  height: 100%;
+  margin-top: 5px;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  font-size: 2em;
+}
+
+.options-btn {
+  color: white;
+}
+
+.options-btn:hover {
+  background: #444;
+}
+
+.yes-chat {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 79vw;
+}
+
+#chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  list-style: none;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+#chat-form {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.chat-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  box-shadow: 6px 0 18px -8px rgba(0, 0, 0, 0.7);
+  padding: 0.35em;
+  gap: 10px;
+}
+.chat-head > h3 {
+  margin-top: auto;
+}
+.chat-pfp {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.friend-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+.friend-pfp {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 8px;
+}
+
+.friend-name-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.friend-display {
+  font-weight: bold;
+  font-size: 14px;
+  overflow: hidden;
+  color: white;
+}
+
+.friend-handle {
+  font-size: 12px;
+  opacity: 0.7;
+  color: #ccc;
+}
+
+

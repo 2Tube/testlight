@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Docs</title>
+<link rel="stylesheet" href="./Style/chat.css">
+<link rel="stylesheet" href="./Style/friends.css">
+<link rel="stylesheet" href="./Style/updtInbox.css">
+<link rel="icon" type="image/png" href="./images/favicon.png">
+</head>
+<body>
+<img src="./images/bg.png"
+ style="position: absolute; top: 0; left: 0; z-index: -10; min-height: 100vh; min-width: 100vw; max-height: 100vh; max-width: 100vw;">
+<div class="nav">
+  <img src="./images/elseLogo.png" style="height: 4.5vh; margin-left: -0.75vw;" class="imgeffect">
+  <div class="rightbuttons">
+  <button id="inbox-btn"><img src="./images/Mail.png"><span id="mail-count" class="badge hidden">0</span></button>
+  <button onclick="location.href='./profile.html'"><img src="./images/me.png"></button>
+  </div>
+</div>
+<!-- Servers sidebar -->
+<div id="servers">
+  <h3>Servers</h3>
+  <button id="add-server-btn"><p class="big">+</p></button>
+  <button id="join-server-btn">Join</button>
+  <ul id="server-list"></ul>
+</div>
+
+<!-- Friends sidebar -->
+<div id="friends">
+  <h3>Friends</h3>
+  <button id="btn">Find Friends</button>
+  <ul id="friend-list">
+
+  </ul>
+</div>
+
+<!-- Main chat area -->
+<div id="main">
+  <div class="no-chat">
+    <h2>Welcome to OpusV5, <span id="current-user-name">User</span></h2>
+    <br>
+    <p>Join a server or add a friend to start chatting!</p>
+    <br>
+    <p>If you already have added servers or friends then <br> Just select them to begin</p>
+  </div>
+  <div class="yes-chat">
+
+  </div>
+</div>
+<!-- Friend Options Modal -->
+<div id="friendOptionsModal" class="modal">
+  <div class="modal-content">
+    <h2 id="friendOptionsName">Friend Options</h2>
+
+    <button id="deleteFriendBtn" class="danger-btn">Remove Friend</button>
+
+    <button id="closeFriendModal" class="close-btn">Close</button>
+  </div>
+</div>
+<!-- Gif Modal -->
+<!-- GIF PICKER MODAL -->
+<div id="gif-modal">
+  <div id="gif-modal-inner">
+    <input id="gif-search" placeholder="Search GIFs..." />
+<div id="gif-results"></div>
+  </div>
+</div>
+
+<!-- SERVER GIF MODAL -->
+<div id="server-gif-modal" class="gif-modal" style="display:none;">
+  <div id="server-gif-modal-inner" class="gif-modal-inner">
+    <input id="server-gif-search" placeholder="Search GIFs..." />
+    <div id="server-gif-results"></div>
+  </div>
+</div>
+
+
+<!-- Add Server Modal -->
+<div id="server-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Create Server</h2>
+    <input type="hidden" id="server-image-url">
+    <input type="text" id="server-name" placeholder="Server Name" required>
+    <input type="file" id="server-image" accept="image/*">
+    <input type="text" id="server-password" placeholder="Server Password">
+    <button id="create-server">Create Server</button>
+  </div>
+</div>
+
+<!-- Join Server Modal -->
+<div id="join-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Join Server</h2>
+    <input type="text" id="join-server-name" placeholder="Server Name" required>
+    <input type="password" id="join-server-password" placeholder="Server Password">
+    <button id="join-server-confirm">Join Server</button>
+  </div>
+</div>
+<!-- SERVER CHAT MODAL -->
+<div id="server-chat-modal" class="modal" style="display:none;">
+
+  <div class="server-chat-nav" id="server-chat-nav"></div>
+
+  <div class="server-chat-messages" id="server-chat-messages"></div>
+
+  <div class="server-chat-input" id="server-chat-input">
+    <input type="text" id="server-chat-box" placeholder="Message...">
+    <button id="server-chat-send" style="display: none;">Send</button>
+  </div>
+
+</div>
+
+
+
+<!-- Find Friends Modal -->
+<div id="find-friends-modal" class="modal">
+  <div class="modal-content" id="differ">
+    <span class="close">&times;</span>
+    <h2>Find Friends</h2>
+    <input type="text" id="friend-search" placeholder="Search for friends...">
+    <ul id="friend-results"></ul>
+  </div>
+</div>
+<div id="inbox-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Inbox</h2>
+    <ul id="inbox-list"></ul>
+  </div>
+</div>
+
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script> <!-- <- add this -->
+<!-- Firebase Config -->
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyAZgBE5NSV_ueySIMEzI5sSMiXWXgIEAm0",
+    authDomain: "schoolwebapp-f387b.firebaseapp.com",
+    databaseURL: "https://schoolwebapp-f387b-default-rtdb.firebaseio.com",
+    projectId: "schoolwebapp-f387b",
+    storageBucket: "schoolwebapp-f387b.appspot.com",   // ✅ FIXED
+    messagingSenderId: "586089938810",
+    appId: "1:586089938810:web:571725c421c9d9365220c3",
+    measurementId: "G-N116PDW0M4"
+  };
+    firebase.initializeApp(firebaseConfig);
+</script>
+
+<!-- Dashboard JS -->
+<script src="./script/chat.js" defer></script>
+<script src="./script/fh.js" defer></script>
+<script src="./script/updtInbox.js" defer></script>
+<script src="./script/frOPT.js" defer></script>
+<script src="./script/servers.js" defer></script>
+
+<script>
+window.addEventListener("DOMContentLoaded", () => {
+  const user = localStorage.getItem("currentUser");
+
+  if (!user) {
+    console.log("Not logged in → redirecting to login");
+    window.location.href = "./index.html";
+  } else {
+    console.log("Logged in as:", user);
+    document.getElementById("current-user-name").textContent = user;
+  }
+});
+</script>
+
+</body>
+</html>
